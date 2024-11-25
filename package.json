@@ -1,0 +1,93 @@
+{
+  "name": "open-admin-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "@tabler/icons": "^1.41.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "@uiw/react-md-editor": "^4.0.4",
+    "algoliasearch": "^4.11.0",
+    "axios": "^0.25.0",
+    "currency-symbol-map": "^5.0.1",
+    "date-fns": "^2.27.0",
+    "date-fns-tz": "^1.3.3",
+    "eslint-config-prettier": "^8.6.0",
+    "firebase": "^9.1.3",
+    "formik": "^2.2.9",
+    "framer-motion": "^8.0.1",
+    "graphql": "^15.6.1",
+    "husky": "^8.0.3",
+    "i18next": "^21.3.2",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-http-backend": "^1.3.1",
+    "iso8601-duration": "^1.3.0",
+    "lodash": "^4.17.21",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-cool-dimensions": "^2.0.7",
+    "react-country-flag": "^3.0.2",
+    "react-dom": "^18.0.2",
+    "react-helmet-async": "^2.0.1",
+    "react-i18next": "^11.12.0",
+    "react-instantsearch-dom": "^6.16.0",
+    "react-router-dom": "^6.3.0",
+    "recharts": "^2.1.13",
+    "recoil": "^0.7.4",
+    "styled-components": "^5.3.5",
+    "tinyduration": "^3.2.2",
+    "typescript": "^4.4.4",
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start --openssl-legacy-provider",
+    "start:node16": "react-scripts --openssl-legacy-provider start",
+    "build:dev": "GENERATE_SOURCEMAP=false && env-cmd -f .env.development react-scripts build",
+    "build:sandbox": "GENERATE_SOURCEMAP=false && env-cmd -f .env.sandbox react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && firebase deploy -P production --only hosting",
+    "deploy:sandbox": "npm run build:sandbox && firebase deploy -P sandbox --only hosting",
+    "deploy:dev": "npm run build:dev && firebase deploy -P default --only hosting",
+    "lint": "eslint --ext .jsx --ext .js --ext .ts --ext .tsx src && npm run check-types",
+    "check-types": "tsc",
+    "prettier": "prettier --check \"src/**/*.tsx\" \"src/**/*.ts\"",
+    "prettier:fix": "prettier --write \"src/**/*.tsx\" \"src/**/*.ts\"",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.33",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-instantsearch-dom": "^6.12.0",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.25",
+    "env-cmd": "^10.1.0",
+    "react-scripts": "^5.0.1"
+  }
+}

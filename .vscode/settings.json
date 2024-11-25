@@ -1,0 +1,8 @@
+{
+    "conventionalCommits.scopes": [
+        "services",
+        "analytics",
+        "calendar",
+        "booking"
+    ]
+}
